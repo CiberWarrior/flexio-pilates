@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Generate array of image filenames
+const images = Array.from({ length: 27 }, (_, i) => {
+  const num = String(i + 1).padStart(2, '0');
+  return {
+    src: `/galerija/Flexio Pilates Yoga Studio${num}.jpg`,
+    alt: `Flexio Pilates Yoga Studio - Fotografija ${num}`,
+  };
+});
+---
+
+<Layout
+  title="Galerija | Flexio Pilates & Yoga Studio Zagreb"
+  description="Pogledajte fotografije Flexio studija, naše prostore, opremu i satove."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-purple-50 to-pink-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 font-display"
+        >
+          Galerija fotografija
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Pogledajte naš studio i atmosferu koja vas očekuje
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Gallery Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
+        id="gallery"
+      >
+        {
+          images.map((image, index) => (
+            <div
+              class="group relative aspect-square rounded-2xl overflow-hidden bg-gray-100 cursor-pointer hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              data-index={index}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="absolute bottom-4 left-4 right-4">
+                  <div class="flex items-center justify-between text-white">
+                    <span class="text-sm font-medium">Flexio Studio</span>
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4"
+  >
+    <button
+      id="closeLightbox"
+      class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+      aria-label="Zatvori"
+    >
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <button
+      id="prevImage"
+      class="absolute left-4 text-white hover:text-gray-300 transition-colors p-2"
+      aria-label="Prethodna slika"
+    >
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+
+    <div class="max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center">
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+        class="max-w-full max-h-full object-contain rounded-lg"
+      />
+    </div>
+
+    <button
+      id="nextImage"
+      class="absolute right-4 text-white hover:text-gray-300 transition-colors p-2"
+      aria-label="Sljedeća slika"
+    >
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <div
+      class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm"
+      id="imageCounter"
+    >
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 font-display">
+        Želite vidjeti studio uživo?
+      </h2>
+      <p class="text-xl text-gray-600 mb-8">
+        Dođite na probni sat i iskusite Flexio atmosferu
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-block bg-flexio text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+      >
+        Rezerviraj probni sat
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage') as HTMLImageElement;
+    const imageCounter = document.getElementById('imageCounter');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const prevImage = document.getElementById('prevImage');
+    const nextImage = document.getElementById('nextImage');
+    const galleryItems = document.querySelectorAll('#gallery > div');
+
+    let currentIndex = 0;
+    const images = Array.from(galleryItems).map((item) => {
+      const img = item.querySelector('img') as HTMLImageElement;
+      return {
+        src: img.src,
+        alt: img.alt,
+      };
+    });
+
+    function openLightbox(index: number) {
+      currentIndex = index;
+      updateLightboxImage();
+      lightbox?.classList.remove('hidden');
+      lightbox?.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxFn() {
+      lightbox?.classList.add('hidden');
+      lightbox?.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxImage() {
+      if (lightboxImage && imageCounter) {
+        lightboxImage.src = images[currentIndex].src;
+        lightboxImage.alt = images[currentIndex].alt;
+        imageCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+      }
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightboxImage();
+    }
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightboxImage();
+    }
+
+    // Event listeners
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeLightbox?.addEventListener('click', closeLightboxFn);
+    nextImage?.addEventListener('click', showNextImage);
+    prevImage?.addEventListener('click', showPrevImage);
+
+    // Close on background click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightboxFn();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('flex')) {
+        if (e.key === 'Escape') closeLightboxFn();
+        if (e.key === 'ArrowRight') showNextImage();
+        if (e.key === 'ArrowLeft') showPrevImage();
+      }
+    });
+  </script>
+</Layout>
+

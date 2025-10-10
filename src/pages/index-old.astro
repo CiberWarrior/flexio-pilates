@@ -1,0 +1,1161 @@
+---
+// Import global styles
+import '../styles/global.css';
+
+// SEO and metadata
+const title = 'Flexio Pilates & Yoga Studio Zagreb | B.A.S.I. Pilates od 2007';
+const description =
+  'Prvi certificirani B.A.S.I. Pilates studio u Hrvatskoj od 2007. Pilates mašine, Power Vinyasa Yoga, individualni i grupni satovi. Rezervirajte svoj termin danas!';
+---
+
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="pilates, yoga, B.A.S.I. pilates, pilates zagreb, yoga zagreb, pilates mašine, reformer, cadillac, vinyasa yoga, flexio"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://flexio.com.hr/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://flexio.com.hr/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <title>{title}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans antialiased">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .font-display {
+        font-family: 'Playfair Display', serif;
+      }
+    </style>
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 md:h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="#home" class="text-2xl md:text-3xl font-bold text-flexio font-display">
+              Flexio
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-6 lg:space-x-8">
+              <a
+                href="#home"
+                class="text-gray-900 hover:text-flexio px-3 py-2 text-sm font-medium transition-colors"
+                >Naslovnica</a
+              >
+              <a
+                href="#about"
+                class="text-gray-600 hover:text-flexio px-3 py-2 text-sm font-medium transition-colors"
+                >O nama</a
+              >
+              <a
+                href="#services"
+                class="text-gray-600 hover:text-flexio px-3 py-2 text-sm font-medium transition-colors"
+                >Program</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-600 hover:text-flexio px-3 py-2 text-sm font-medium transition-colors"
+                >Kontakt</a
+              >
+            </div>
+          </div>
+
+          <!-- CTA Button - Desktop -->
+          <div class="hidden md:block">
+            <a
+              href="#contact"
+              class="bg-flexio text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-purple-700 transition-all shadow-md hover:shadow-lg"
+            >
+              Rezerviraj termin
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900"
+              aria-label="Toggle menu"
+            >
+              <svg
+                id="menu-icon"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg
+                id="close-icon"
+                class="h-6 w-6 hidden"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white border-t border-gray-100"
+      >
+        <div class="px-4 pt-2 pb-4 space-y-1">
+          <a
+            href="#home"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-900 hover:bg-purple-50 hover:text-flexio transition-colors"
+            >Naslovnica</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-600 hover:bg-purple-50 hover:text-flexio transition-colors"
+            >O nama</a
+          >
+          <a
+            href="#services"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-600 hover:bg-purple-50 hover:text-flexio transition-colors"
+            >Program</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-3 rounded-md text-base font-medium text-gray-600 hover:bg-purple-50 hover:text-flexio transition-colors"
+            >Kontakt</a
+          >
+          <a
+            href="#contact"
+            class="block mt-4 text-center bg-flexio text-white px-6 py-3 rounded-full text-base font-medium hover:bg-purple-700 transition-colors"
+          >
+            Rezerviraj termin
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 pt-16 md:pt-20"
+    >
+      <!-- Decorative background elements -->
+      <div
+        class="absolute inset-0 overflow-hidden"
+        style="background-image: radial-gradient(circle at 20% 50%, rgba(102, 45, 145, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 192, 203, 0.15) 0%, transparent 50%);"
+      >
+      </div>
+
+      <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20">
+        <!-- Badge -->
+        <div class="inline-block mb-6">
+          <span
+            class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm text-flexio border border-purple-200"
+          >
+            <svg
+              class="w-4 h-4 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            Prvi certificirani B.A.S.I. Pilates studio u Hrvatskoj • Od 2007
+          </span>
+        </div>
+
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 font-display leading-tight"
+        >
+          Otvorite vrata do<br />
+          <span class="text-flexio">zdravijeg tijela</span>
+          <br />i smirenijeg uma
+        </h1>
+
+        <p
+          class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed"
+        >
+          Započnite svoje putovanje kroz pilates i yoga<br class="hidden sm:block" />
+           i otkrijte snagu svakog pokreta
+        </p>
+
+        <!-- Info boxes -->
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10 text-sm text-gray-600"
+        >
+          <div class="flex items-center">
+            <svg
+              class="w-5 h-5 text-flexio mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            Male grupe 8-10 osoba
+          </div>
+          <span class="hidden sm:block text-gray-300">•</span>
+          <div class="flex items-center">
+            <svg
+              class="w-5 h-5 text-flexio mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+            Upisi tokom cijele godine
+          </div>
+          <span class="hidden sm:block text-gray-300">•</span>
+          <div class="flex items-center">
+            <svg
+              class="w-5 h-5 text-flexio mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Rezervacija obavezna
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            class="bg-flexio text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            Rezerviraj termin
+          </a>
+          <a
+            href="#services"
+            class="border-2 border-flexio text-flexio bg-white/80 backdrop-blur-sm px-8 py-4 rounded-full text-lg font-medium hover:bg-flexio hover:text-white transition-all shadow-md hover:shadow-lg"
+          >
+            Pogledaj program
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <a href="#about" class="animate-bounce block">
+          <svg
+            class="w-6 h-6 text-flexio"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Main heading -->
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display"
+          >
+            B.A.S.I. Pilates Zagreb
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Prvi certificirani Pilates studio u Hrvatskoj svjetski poznate
+            američke škole<br class="hidden sm:block" />
+             B.A.S.I Pilates (Body Arts & Science International)
+          </p>
+        </div>
+
+        <!-- Feature Grid -->
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12 mb-20">
+          <!-- Since 2007 -->
+          <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50">
+            <div
+              class="w-16 h-16 bg-flexio rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Od 2007.</h3>
+            <p class="text-gray-600">
+              Više od 17 godina iskustva u pružanju vrhunskih Pilates i Yoga programa u Zagrebu
+            </p>
+          </div>
+
+          <!-- B.A.S.I. Certified -->
+          <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50">
+            <div
+              class="w-16 h-16 bg-flexio rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+              B.A.S.I. Certificirano
+            </h3>
+            <p class="text-gray-600">
+              Suvremeni pristup originalnoj metodi Josepha Pilatesa prema najvišim standardima
+            </p>
+          </div>
+
+          <!-- Professional Equipment -->
+          <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50">
+            <div
+              class="w-16 h-16 bg-flexio rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">
+              Profesionalna oprema
+            </h3>
+            <p class="text-gray-600">
+              Reformer, Cadillac, Wunda Chair, Ladder Barrel, Spine Corrector
+            </p>
+          </div>
+        </div>
+
+        <!-- Instructor Section -->
+        <div
+          class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 md:p-12"
+        >
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Image placeholder -->
+            <div class="order-2 md:order-1">
+              <div
+                class="aspect-square rounded-2xl bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center shadow-xl"
+              >
+                <svg
+                  class="w-32 h-32 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="order-1 md:order-2">
+              <h3
+                class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-display"
+              >
+                Petra Habun
+              </h3>
+              <p class="text-lg text-flexio font-semibold mb-4">
+                Vlasnica studija &amp; Internacionalno certificirana Pilates &amp;
+                Yoga učiteljica
+              </p>
+              <div class="space-y-4 text-gray-700">
+                <p>
+                  S Vama na satovima je Petra Habun, osnivačica i vlasnica Flexio
+                  studija. Certificirana je od strane međunarodno priznate B.A.S.I.
+                  škole za Pilates te posjeduje certifikate za Power Vinyasa Yoga (Divya
+                  Yoga, YA, RYT 200).
+                </p>
+                <p>
+                  Individualni pristup svakom polazrniku omogućava maksimalan napredak
+                  i personalizirano vođenje kroz svaki pokret, bilo da se radi o grupnim
+                  ili individualnim satovima.
+                </p>
+              </div>
+
+              <!-- Credentials -->
+              <div class="mt-6 flex flex-wrap gap-3">
+                <span
+                  class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-flexio border border-purple-200"
+                >
+                  B.A.S.I. Pilates
+                </span>
+                <span
+                  class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-flexio border border-purple-200"
+                >
+                  Divya Yoga RYT 200
+                </span>
+                <span
+                  class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white text-flexio border border-purple-200"
+                >
+                  Power Vinyasa Yoga
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display"
+          >
+            Program
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Različiti programi prilagođeni svakoj životnoj dobi, spolu i razini
+            tjelesne pripremljenosti
+          </p>
+        </div>
+
+        <!-- Main Services Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- Pilates Machines Card -->
+          <div
+            class="bg-white rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-flexio"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-flexio to-purple-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4 font-display">
+              Pilates mašine
+            </h3>
+            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+              Individualni i poluindividualni satovi na profesionalnim Pilates
+              mašinama. Personalizirani pristup za maksimalne rezultate.
+            </p>
+
+            <div class="mb-6">
+              <p class="text-sm font-semibold text-flexio mb-3 uppercase tracking-wide">
+                Oprema:
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm"
+                  >Reformer</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm"
+                  >Cadillac</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm"
+                  >Wunda Chair</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm"
+                  >Ladder Barrel</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm"
+                  >Spine Corrector</span
+                >
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Individualni satovi</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Poluindividualni satovi (2-3 osobe)</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Prilagođeno svim razinama</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Power Vinyasa Yoga Card -->
+          <div
+            class="bg-white rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-flexio"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-flexio to-purple-700 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
+            >
+              <svg
+                class="w-8 h-8 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-4 font-display">
+              Power Vinyasa Yoga
+            </h3>
+            <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+              Intenzivan program prilagodljiv svakoj životnoj dobi, spolu i razini
+              tjelesne pripremljenosti - Dinamična Yoga! Upoznajte pravu, potpunu
+              yoga praksu.
+            </p>
+
+            <div class="bg-purple-50 rounded-xl p-4 mb-6">
+              <p class="text-sm text-purple-900 leading-relaxed">
+                Sve ono što bi jedan sat yoge trebao sadržavati - individualni pristup
+                certificirane učiteljice Yoge
+              </p>
+            </div>
+
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Dinamična Vinyasa Flow praksa</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Prilagođeno svim razinama</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Grupe 8-10 osoba</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-5 h-5 text-flexio mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Individualni satovi dostupni</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Important Notice -->
+        <div
+          class="bg-gradient-to-r from-flexio to-purple-700 rounded-2xl p-8 text-white text-center"
+        >
+          <h3 class="text-2xl font-bold mb-4">Važno!</h3>
+          <div class="max-w-3xl mx-auto space-y-2 text-lg">
+            <p>
+              <strong>Prije prvog dolaska potrebna je rezervacija termina.</strong>
+            </p>
+            <p>
+              Predbilježite se za svoje najdraže satove i na vrijeme rezervirajte
+              svoje mjesto u grupi.
+            </p>
+            <p class="text-sm mt-4 text-purple-100">
+              Termin se ugovara isključivo putem maila petra@flexio.com.hr ili mobitela
+              099 2157 495
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display"
+          >
+            Kontakt
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Spremni ste započeti svoj put ka zdravijem tijelu i smirnonijem umu?
+            Kontaktirajte nas danas!
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                Informacije
+              </h3>
+              <div class="space-y-5">
+                <!-- Email -->
+                <a
+                  href="mailto:petra@flexio.com.hr"
+                  class="flex items-start p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-colors group"
+                >
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-flexio rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-sm text-gray-500 font-medium">Email</p>
+                    <p class="text-lg text-gray-900 font-semibold">
+                      petra@flexio.com.hr
+                    </p>
+                  </div>
+                </a>
+
+                <!-- Phone -->
+                <a
+                  href="tel:+385992157495"
+                  class="flex items-start p-4 rounded-xl bg-purple-50 hover:bg-purple-100 transition-colors group"
+                >
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-flexio rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-sm text-gray-500 font-medium">Telefon / Mobitel</p>
+                    <p class="text-lg text-gray-900 font-semibold">
+                      099 2157 495
+                    </p>
+                  </div>
+                </a>
+
+                <!-- Location -->
+                <div class="flex items-start p-4 rounded-xl bg-purple-50">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-flexio rounded-lg flex items-center justify-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-sm text-gray-500 font-medium">Lokacija</p>
+                    <p class="text-lg text-gray-900 font-semibold">
+                      Zagreb, Hrvatska
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media / Facebook -->
+            <div
+              class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6"
+            >
+              <h4 class="text-lg font-semibold text-gray-900 mb-4">
+                Pratite nas
+              </h4>
+              <p class="text-gray-600 mb-4">
+                Sve informacije pratite i na našoj Facebook stranici!
+              </p>
+              <a
+                href="https://www.facebook.com/flexio.hr"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-6 py-3 bg-flexio text-white rounded-full font-medium hover:bg-purple-700 transition-colors"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  ></path>
+                </svg>
+                Facebook
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <div
+              class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 md:p-10"
+            >
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                Pošaljite poruku
+              </h3>
+              <form class="space-y-5" id="contact-form">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-2"
+                    >Vaše ime</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-flexio focus:border-transparent transition-all bg-white"
+                    placeholder="Ime i prezime"
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-2"
+                    >Email adresa</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-flexio focus:border-transparent transition-all bg-white"
+                    placeholder="vas.email@primjer.com"
+                  />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-2"
+                    >Telefon (opcionalno)</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-flexio focus:border-transparent transition-all bg-white"
+                    placeholder="099 123 4567"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-2"
+                    >Vaša poruka</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-flexio focus:border-transparent transition-all bg-white resize-none"
+                    placeholder="Recite nam više o tome što vas zanima..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-flexio text-white py-4 rounded-xl font-semibold hover:bg-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  Pošalji poruku
+                </button>
+                <p class="text-sm text-gray-600 text-center">
+                  Odgovorit ćemo vam u najkraćem mogućem roku
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Brand -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <h3 class="text-3xl font-bold text-flexio mb-4 font-display">
+              Flexio
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              Prvi certificirani B.A.S.I. Pilates studio u Hrvatskoj od 2007.
+              godine.
+            </p>
+            <p class="text-sm text-gray-500">Zagreb, Hrvatska</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Navigacija</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li>
+                <a
+                  href="#home"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Naslovnica
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> O nama
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Program
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Kontakt
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Program</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Pilates mašine
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Power Vinyasa Yoga
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Individualni satovi
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-white transition-colors inline-flex items-center"
+                >
+                  <span class="mr-2">→</span> Grupni satovi
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li>
+                <a
+                  href="mailto:petra@flexio.com.hr"
+                  class="hover:text-white transition-colors"
+                >
+                  petra@flexio.com.hr
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+385992157495"
+                  class="hover:text-white transition-colors"
+                >
+                  099 2157 495
+                </a>
+              </li>
+              <li class="pt-2">
+                <a
+                  href="https://www.facebook.com/flexio.hr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center text-gray-400 hover:text-white transition-colors"
+                >
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    ></path>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-sm"
+        >
+          <p class="mb-4 sm:mb-0">
+            &copy; 2008 - {new Date().getFullYear()} Flexio Pilates Yoga Studio.
+            Sva prava pridržana.
+          </p>
+          <p class="text-gray-500">
+            B.A.S.I. Pilates certificirano od 2007.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu & Form Script -->
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            menuIcon?.classList.add('hidden');
+            closeIcon?.classList.remove('hidden');
+          } else {
+            mobileMenu.classList.add('hidden');
+            menuIcon?.classList.remove('hidden');
+            closeIcon?.classList.add('hidden');
+          }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon?.classList.remove('hidden');
+            closeIcon?.classList.add('hidden');
+          });
+        });
+      }
+
+      // Contact form handling (basic client-side validation)
+      const contactForm = document.getElementById(
+        'contact-form',
+      ) as HTMLFormElement | null;
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // Get form data
+          const formData = new FormData(contactForm);
+          const name = formData.get('name');
+          const email = formData.get('email');
+          const phone = formData.get('phone');
+          const message = formData.get('message');
+
+          // Create mailto link (fallback - in production, use proper form handling)
+          const subject = encodeURIComponent('Upit sa web stranice - ' + name);
+          const body = encodeURIComponent(
+            `Ime: ${name}\nEmail: ${email}\nTelefon: ${phone || 'N/A'}\n\nPoruka:\n${message}`,
+          );
+          const mailtoLink = `mailto:petra@flexio.com.hr?subject=${subject}&body=${body}`;
+
+          // Open email client
+          window.location.href = mailtoLink;
+
+          // Show success message
+          alert(
+            'Vaša poruka će biti otvorena u vašem email klijentu. Molimo pošaljite email kako bismo mogli odgovoriti na vaš upit.',
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
